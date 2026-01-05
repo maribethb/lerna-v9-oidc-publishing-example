@@ -1,5 +1,7 @@
 # Lerna v9 OIDC Publishing Example
 
+This example adds a release environment to try to debug an issue.
+
 Example of trusted publishing with the upcoming lerna v9.
 
 Please be sure to always follow the latest guidance from npm directly regarding permissions etc:
