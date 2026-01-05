@@ -1,15 +1,15 @@
 {
-  "name": "@jameshenry/lerna-v9-oidc-publishing-example",
+  "name": "maribethb-lerna-v9-oidc-publishing-example",
   "version": "0.0.0",
   "type": "commonjs",
   "description": "Example of trusted publishing with lerna v9, intentionally functionally useless.",
-  "homepage": "https://github.com/JamesHenry/lerna-v9-oidc-publishing-example#readme",
+  "homepage": "https://github.com/maribethb/lerna-v9-oidc-publishing-example#readme",
   "bugs": {
-    "url": "https://github.com/JamesHenry/lerna-v9-oidc-publishing-example/issues"
+    "url": "https://github.com/maribethb/lerna-v9-oidc-publishing-example/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/JamesHenry/lerna-v9-oidc-publishing-example.git"
+    "url": "git+https://github.com/maribethb/lerna-v9-oidc-publishing-example.git"
   },
   "license": "MIT",
   "author": "JamesHenry <james@henry.sc>",
