@@ -22,7 +22,7 @@ jobs:
     name: Validate Release Parameters
     runs-on: ubuntu-latest
     # Only run on the official repository to avoid wasted compute and unnecessary errors on forks (also an initial albeit weak first layer of protection against unauthorized releases)
-    if: github.repository == 'JamesHenry/lerna-v9-oidc-publishing-example'
+    if: github.repository == 'maribethb/lerna-v9-oidc-publishing-example'
     outputs:
       should_release: ${{ steps.validate.outputs.should_release }}
       release_type: ${{ steps.validate.outputs.release_type }}
@@ -75,10 +75,11 @@ jobs:
     needs: [validate]
     # Only run on the official repository to avoid wasted compute and unnecessary errors on forks (also an initial albeit weak first layer of protection against unauthorized releases)
     # Also ensure validation passed and we're releasing a canary version
-    if: github.repository == 'JamesHenry/lerna-v9-oidc-publishing-example' && needs.validate.outputs.should_release == 'true' && needs.validate.outputs.is_canary == 'true'
+    if: github.repository == 'maribethb/lerna-v9-oidc-publishing-example' && needs.validate.outputs.should_release == 'true' && needs.validate.outputs.is_canary == 'true'
     permissions:
       contents: read # No need to write to the repository for canary releases
       id-token: write # Required for trusted publishing
+    environment: release
     steps:
       - name: Checkout
         uses: actions/checkout@v5
@@ -96,4 +97,4 @@ jobs:
         run: npm ci --ignore-scripts
 
       - name: Publish minor release (using OIDC trusted publishing)
-        run: npx lerna publish minor --force-publish -y --push=false --gitTagVersion=false
+        run: npx lerna publish minor --force-publish -y --push=false --gitTagVersion=false --loglevel=silly
